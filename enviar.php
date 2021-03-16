@@ -4,13 +4,14 @@ $nombre=$_POST["nombre"];
 $correo=$_POST["email"];
 $asunto=$_POST["asunto"];
 $mensaje=$_POST["mensaje"];
+
 echo "El nombre es: ".$nombre." <br>Destinatario: ".$destinatario."<br>Asunto: ".$asunto."<br>Mensaje: ".$mensaje;
 
 $body = [
 	    'Messages' => [
 	        [
 	        'From' => [
-	            'Email' => "noreply@latinscorts.com",
+	            'Email' => "bu@julieth.com",
 	            'Name' => "$nombre"
 	        ],
 	        'To' => [
@@ -27,7 +28,7 @@ $body = [
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Att:$nombre</p>
-<p>&copy; 2021 - Ojitos</p>
+<p>&copy; 2021 - Julieth</p>
 <span style='font-size: small;''><span style='font-size: small;''><!-- [if mso | IE]><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' ><tr><td><![endif]--></span></span></div>
 </center>",      
 		        ]
@@ -51,7 +52,7 @@ $body = [
 		$response = json_decode($server_output);
 		if ($response->Messages[0]->Status == 'success') {
 			echo "<h1>Mensaje enviado correctamente</h1>";
-			header("Refresh:5; url=/");
+			header("Refresh:5; url=index.html");
 		   	return 1;
 		}else{
 			return 0;
